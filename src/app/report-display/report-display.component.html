@@ -1,0 +1,12 @@
+<div class="container">
+
+  <div class="card"
+       *ngFor="let report of allReports"
+  (click)="goToReport()">
+    <div class="report-info">
+      <p class="report-name">{{ report.displayName }}</p>
+      <p class="sub-title">{{ report.description }}</p>
+    </div>
+  </div>
+
+</div>
