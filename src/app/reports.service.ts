@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from "rxjs";
-import { Report } from "./report";
+import { Observable, of, from } from "rxjs";
+import { Report} from "./report";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,7 @@ export class ReportsService {
         "serviceUrl": "test-report-1",
         "ordering": 100,
         "groupId": 1,
+        "groupName": "one",
         "pinned": false
       },
       {
@@ -26,6 +27,7 @@ export class ReportsService {
         "serviceUrl": "test-report-2",
         "ordering": 200,
         "groupId": 1,
+        "groupName": "two",
         "pinned": true
       },
       {
@@ -36,6 +38,7 @@ export class ReportsService {
         "serviceUrl": "test-report-3",
         "ordering": 200,
         "groupId": 2,
+        "groupName": "three",
         "pinned": false
       },
       {
@@ -46,8 +49,10 @@ export class ReportsService {
         "serviceUrl": "test-report-4",
         "ordering": 100,
         "groupId": 2,
+        "groupName": "one",
         "pinned": false
       }
     ])
+
 
 }

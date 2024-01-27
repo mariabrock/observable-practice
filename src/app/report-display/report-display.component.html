@@ -1,12 +1,38 @@
 <div class="container">
 
-  <div class="card"
+  <mat-form-field class="input" appearance="outline">
+    <input matInput type="text" placeholder="Search Reports" />
+    <mat-icon matSuffix class="material-icons">search</mat-icon>
+  </mat-form-field>
+
+  <div class="button-group">
+    <mat-icon (click)="sort()"
+    >sort_by_alpha</mat-icon>
+
+    <mat-button-toggle-group #toggleGroup = "matButtonToggleGroup" name="filters" aria-label="filters" multiple>
+      <mat-button-toggle #toggleBtn value="one">
+        <mat-icon class="material-icons-round">paid</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle #toggleBtn value="two">
+        <mat-icon>
+          <span class="material-icons-round">people</span>
+        </mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle #toggleBtn value="three">
+        <mat-icon>
+          <span class="material-icons-round">sms</span>
+        </mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <mat-card class="card"
        *ngFor="let report of allReports"
   (click)="goToReport()">
     <div class="report-info">
       <p class="report-name">{{ report.displayName }}</p>
       <p class="sub-title">{{ report.description }}</p>
     </div>
-  </div>
+  </mat-card>
 
 </div>
